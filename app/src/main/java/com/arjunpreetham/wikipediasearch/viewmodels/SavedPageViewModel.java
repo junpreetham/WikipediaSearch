@@ -1,6 +1,7 @@
 package com.arjunpreetham.wikipediasearch.viewmodels;
 
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
 
 import com.arjunpreetham.wikipediasearch.data.DataRepository;
 import com.arjunpreetham.wikipediasearch.models.DataRequestModel;
@@ -44,6 +45,7 @@ public class SavedPageViewModel extends ViewModel {
                     @Override
                     public void onNext(ArrayList<SavedPageDataModel> savedListDataModels) {
                         //Push list to View
+                        Log.d("DEBUG", "ON NEXT");
                         savedListModelEmitter.onNext(savedListDataModels);
                     }
 

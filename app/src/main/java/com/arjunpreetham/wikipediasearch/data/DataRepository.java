@@ -1,6 +1,7 @@
 package com.arjunpreetham.wikipediasearch.data;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.arjunpreetham.wikipediasearch.models.DataRequestModel;
 import com.arjunpreetham.wikipediasearch.models.SavedPageDataModel;
@@ -62,6 +63,8 @@ public class DataRepository implements HttpResponse {
 
                             MainDB db = new MainDB(context);
                             db.deletePage(page);
+
+                            Log.d("DEBUG", "Deleting page");
 
                             ArrayList<SavedPageDataModel> model = db.getSavedPages();
 

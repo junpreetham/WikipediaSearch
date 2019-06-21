@@ -54,10 +54,9 @@ public class MainDB extends SQLiteOpenHelper {
     }
 
     public void deletePage(SavedPageDataModel page){
-        String heading = page.getHeading();
-        String description = page.getDescription();
+        String pageID = page.getPageID();
 
-        String q = "DELETE FROM SAVED_PAGES WHERE TITLE = \"" + heading + "\" AND DESCRIPTION = \"" + description + "\";";
+        String q = "DELETE FROM SAVED_PAGES WHERE PAGE_ID = \"" + pageID + "\";";
 
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL(q);
