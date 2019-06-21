@@ -79,6 +79,10 @@ public class MainDB extends SQLiteOpenHelper {
             String imageURL = c.getString(2);
             String pageID = c.getString(3);
 
+            if(description.equals("NONE")){
+                description = "No description available";
+            }
+
             SavedPageDataModel model = new SavedPageDataModel(title, description, imageURL, pageID);
 
             data.add(model);

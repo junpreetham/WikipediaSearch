@@ -64,7 +64,13 @@ public class SavedItemsListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         ItemHolder itemHolder = (ItemHolder) viewHolder;
 
-        Glide.with(context).load(imageURL).diskCacheStrategy(DiskCacheStrategy.ALL).into(itemHolder.ivDisplayPicture);
+
+        if(imageURL.equals("NONE")){
+            itemHolder.ivDisplayPicture.setImageResource(R.drawable.ic_launcher_background);
+        }else{
+            Glide.with(context).load(imageURL).diskCacheStrategy(DiskCacheStrategy.ALL).into(itemHolder.ivDisplayPicture);
+        }
+
         itemHolder.tvHeading.setText(headingText);
         itemHolder.tvDescription.setText(descriptionText);
 
